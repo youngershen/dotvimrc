@@ -208,7 +208,7 @@ set completeopt=longest,menu
 let Tlist_Ctags_Cmd='/usr/bin/ctags'   " 若在windows中应写成: let Tlist_Ctags_Cmd='ctags.exe
 let Tlist_Show_One_File=1
 let Tlist_OnlyWindow=1
-let Tlist_Use_Right_Window=0
+let Tlist_Use_Right_Window=1
 let Tlist_Sort_Type='name'
 let Tlist_Exit_OnlyWindow=1
 let Tlist_Show_Menu=1
@@ -223,17 +223,26 @@ let Tlist_Process_File_Always=1
 let Tlist_WinHeight=10
 let Tlist_WinWidth=22
 let Tlist_Use_Horiz_Window=0
-nmap tl :TlistToggle<CR>
 
 "winManager 配置
-let g:winManagerWindowLayout='FileExplorer|BufExplorer|NERDTree'  " 这里可以设置为多个窗口, 如'FileExplorer|BufExplorer|TagList'
+let g:winManagerWindowLayout='NERDTree|BufExplorer'  " 这里可以设置为多个窗口, 如'FileExplorer|BufExplorer|TagList'
 let g:persistentBehaviour=0             "只剩一个窗口时, 退出vim.
 let g:winManagerWidth=20
 let g:defaultExplorer=1
 nmap <silent> fir :FirstExplorerWindow<cr>
 nmap <silent> bot :BottomExplorerWindow<cr>
 nmap <silent> wm :WMToggle<cr>
- "NERDTree 配置
+
+
+"NERDTree 配置
+function! NERDTree_Start()  
+    exec 'NERDTree'  
+endfunction  
+  
+function! NERDTree_IsValid()  
+    return 1  
+endfunction  
+let g:NERDTree_title="[NERDTree]"  
  "let loaded_nerd_tree=1    // 禁用所有与NERD_tree有关的命令
 nmap <silent> nto :NERDTreeToggle<cr>
 "let NERDTreeIgnore=['/.vim$','/~$']   " 不显示指定的类型的文件
@@ -245,4 +254,10 @@ let NERDTreeShowLineNumbers=1
 let NERDTreeShowBookmarks=1
 let NERDTreeQuitOnOpen=0    " 打开文件后, 关闭NERDTrre窗口
 let NERDTreeHighlightCursorline=1     " 高亮NERDTrre窗口的当前行
- 
+
+"minibuffer 配置
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplMapWindowNavVim = 1   
+let g:miniBufExplMapWindowNavArrows = 1   
+let g:miniBufExplModSelTarget = 1  
+let g:miniBufExplMoreThanOne=0  
