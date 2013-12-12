@@ -209,7 +209,7 @@ set completeopt=longest,menu
 "winManager 配置
 let g:winManagerWindowLayout='NERDTree|BufExplorer'  " 这里可以设置为多个窗口, 如'FileExplorer|BufExplorer|TagList'
 let g:persistentBehaviour=0             "只剩一个窗口时, 退出vim.
-let g:winManagerWidth=20
+let g:winManagerWidth=50
 let g:defaultExplorer=1
 nmap <silent> fir :FirstExplorerWindow<cr>
 nmap <silent> bot :BottomExplorerWindow<cr>
@@ -231,7 +231,7 @@ nmap <silent> nto :NERDTreeToggle<cr>
 let NERDTreeShowHidden=1    " 不显示隐藏文件(好像只在linux环境中有效)
 let NERDTreeSortOrder=['//$','/.cpp$','/.c$','/.h$', '*']    " 排序
 let NERDTreeCaseSensitiveSort=0     " 不分大小写排序
-let NERDTreeWinSize=30
+let NERDTreeWinSize=180
 let NERDTreeShowLineNumbers=1
 let NERDTreeShowBookmarks=1
 let NERDTreeQuitOnOpen=0    " 打开文件后, 关闭NERDTrre窗口
