@@ -242,4 +242,12 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplMapWindowNavVim = 1   
 let g:miniBufExplMapWindowNavArrows = 1   
 let g:miniBufExplModSelTarget = 1  
-let g:miniBufExplMoreThanOne=0  
+let g:miniBufExplMoreThanOne=0 
+"javascript 高亮
+
+" 打开javascript折叠
+let b:javascript_fold=1
+" 打开javascript对dom、html和css的支持
+let javascript_enable_domhtmlcss=1
+"js自动补全
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
