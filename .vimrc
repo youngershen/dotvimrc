@@ -112,7 +112,7 @@ set tabstop=4
 " 统一缩进为4
 set softtabstop=4
 set shiftwidth=4
-" 不要用空格代替制表符
+" 不要用空格代替制表
 set expandtab
 " 在行和段开始处使用制表符
 set smarttab
@@ -203,11 +203,10 @@ set completeopt=longest,menu
 "各种插件配置
 "
 "
-
 "TagList 配置
-
+let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 "winManager 配置
-let g:winManagerWindowLayout='NERDTree|BufExplorer'  " 这里可以设置为多个窗口, 如'FileExplorer|BufExplorer|TagList'
+let g:winManagerWindowLayout='NERDTree|TagList'  " 这里可以设置为多个窗口, 如'FileExplorer|BufExplorer|TagList'
 let g:persistentBehaviour=0             "只剩一个窗口时, 退出vim.
 let g:winManagerWidth=50
 let g:defaultExplorer=1
@@ -249,5 +248,7 @@ let g:miniBufExplMoreThanOne=0
 let b:javascript_fold=1
 " 打开javascript对dom、html和css的支持
 let javascript_enable_domhtmlcss=1
+"erb = html
+autocmd BufNewFile,BufRead *.html.erb set filetype=html.eruby
 "js自动补全
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
